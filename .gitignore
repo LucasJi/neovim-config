@@ -1,0 +1,4 @@
+### packer.nvim ###
+plugin/
+### mac ###
+**/.DS_Store
