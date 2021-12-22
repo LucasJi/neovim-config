@@ -29,7 +29,7 @@ keymap("n", "gl", "$", opts)
 -- Move cursor to the start of line
 keymap("n", "gh", "^", opts)
 -- Reload neovim configuration
-keymap("n", "<leader>-", ":source ~/.config/nvim/init.lua <CR>", opts)
+-- keymap("n", "<leader>-", "<cmd>:lua require('user.utils.reload').reloadConfig()<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
