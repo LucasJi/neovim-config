@@ -24,6 +24,10 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+-- Move cursor to the end of line
+keymap("n", "gl", "$", opts)
+-- Move cursor to the start of line
+keymap("n", "gh", "^", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -38,11 +42,19 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+keymap("i", "<C-h>", "left", opts)
+keymap("i", "<C-j>", "down", opts)
+keymap("i", "<C-k>", "up", opts)
+keymap("i", "<C-l>", "right", opts)
 
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+-- Move cursor to the end of line
+keymap("v", "gl", "$", opts)
+-- Move cursor to the start of line
+keymap("v", "gh", "^", opts)
 
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
