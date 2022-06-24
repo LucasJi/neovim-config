@@ -77,6 +77,7 @@ return packer.startup(function(use)
 
   -- optimization
   use "lewis6991/impatient.nvim" -- speed up loading lua modules in Neovim to improve startup time
+  use "psliwka/vim-smoothie" -- makes scrolling nice and smooth
 
   -- textobject-surroundings
   use "tpope/vim-surround"
