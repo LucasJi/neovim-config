@@ -38,34 +38,63 @@ packer.init {
   },
 }
 
--- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
+  -- plugin manager
   use "wbthomason/packer.nvim" -- Have packer manage itself
+
+  -- popup
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "numToStr/Comment.nvim" -- Easily comment stuff
-  use "kyazdani42/nvim-web-devicons"
+
+  -- lua
+  use "nvim-lua/plenary.nvim" -- provide some useful functions
+
+  -- paris
+  use "windwp/nvim-autopairs" -- auto pairs
+
+  -- comment
+  use "numToStr/Comment.nvim" -- easily comment stuff
+
+  -- theme
+  use "kyazdani42/nvim-web-devicons" -- icons
+  use "lunarvim/darkplus.nvim" -- a theme
+  use "EdenEast/nightfox.nvim" -- a theme
+
+  -- file-tree-explorer
   use "kyazdani42/nvim-tree.lua"
-  use { "akinsho/bufferline.nvim", tag="v2.*", requires = 'kyazdani42/nvim-web-devicons' }
-  use "moll/vim-bbye"
+
+  -- buffer
+  use { "akinsho/bufferline.nvim", tag="v2.*", requires = 'kyazdani42/nvim-web-devicons' } -- manage buffer lines
+  use "moll/vim-bbye" -- delete buffers without closing windows or messing up layout
+
+  -- status-line
   use 'nvim-lualine/lualine.nvim'
-  use { "akinsho/toggleterm.nvim", tag="v1.*" }
+
+  -- terminal
+  use { "akinsho/toggleterm.nvim", tag="v1.*" } -- persist and toggle multiple terminals during an editing session
+
+  -- project-management
   use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
+
+  -- optimization
+  use "lewis6991/impatient.nvim" -- speed up loading lua modules in Neovim to improve startup time
+
+  -- textobject-surroundings
   use "tpope/vim-surround"
+  use "machakann/vim-sandwich"
+  
+  -- indent
   use "lukas-reineke/indent-blankline.nvim"
+
+  -- dashboard
   use 'goolord/alpha-nvim'
+
+  -- bug-fix
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
+
+  -- which-key
   use "folke/which-key.nvim"
 
-  -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
-  use "EdenEast/nightfox.nvim"
-
-    -- cmp plugins
+    -- cmp-plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
@@ -86,7 +115,7 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
 
-  -- Treesitter
+  -- code highlighting
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
@@ -95,6 +124,7 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+  use "tpope/vim-fugitive"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
