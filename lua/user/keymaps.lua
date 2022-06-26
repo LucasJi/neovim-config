@@ -43,6 +43,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Press jk fast to enter
 -- Map <Caps> to <ESC>, no need this keymap anymore
 keymap("i", "jk", "<ESC>", opts)
+keymap("i", "jj", "<ESC>", opts)
 keymap("i", "<C-h>", "<Left>", opts)
 keymap("i", "<C-j>", "<Down>", opts)
 keymap("i", "<C-k>", "<Up>", opts)
