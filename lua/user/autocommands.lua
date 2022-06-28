@@ -24,5 +24,10 @@ vim.cmd [[
     autocmd!
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
+  " retore cursor when leaving neovim to terminal
+  augroup _cursor_resotre
+    autocmd!
+    autocmd VimLeave * set guicursor=a:hor10
+  augroup end
 ]]
 
